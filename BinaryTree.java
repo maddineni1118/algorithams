@@ -10,7 +10,9 @@ public class BinaryTree {
             bt.insertNode(root,r.nextInt(21));
         }
         bt.printTree(root);
-        System.out.println(bt.isNodeExists(root,8));
+        // System.out.println(bt.isNodeExists(root,8));
+        bt.deleteNode(root,8);
+        bt.printTree(root);
     }
 
     public void printTree(TreeNode root) {
@@ -18,6 +20,24 @@ public class BinaryTree {
             System.out.println(root.data);
             printTree(root.left);
             printTree(root.right);
+        }
+    }
+
+    public TreeNode getParent(TreeNode root, int d) {
+          if(root !=  null) {
+        
+          }
+    }
+
+    public void deleteNode(TreeNode root,int d) {
+        TreeNode t = getParent(root,d);
+        if(t != null) {
+            if(t.left.data == d) {
+                t.left = null;
+            }
+            if(t.right.data == d) {
+                t.right = null;
+            }
         }
     }
 
